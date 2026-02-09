@@ -2,7 +2,7 @@
 
 ## online-boutique-multi-nodes-two-side.cfg
 
-This is the example cfg file for palladium-gateway using two side RDMA primitives.
+This is the example cfg file for nadino-network-engine using two side RDMA primitives.
 
 ### nodes setting
 
@@ -37,7 +37,7 @@ Also notice only ConnectX-4 and above RDMA device is supported.
 
 ### RDMA settings
 
-If you want to use two side RDMA primitive in palladium-gateway, you can leave all settings  unchanged if you do not [change huge page size in your system.](install-dependencies.md)
+If you want to use two side RDMA primitive in nadino-network-engine, you can leave all settings  unchanged if you do not [change huge page size in your system.](install-dependencies.md)
 
 - `local_mempool_size`: the number of elements in local mempool.
 If the number of DPDK huge page is changed, you should change this value accordingly until the shm_mgr can successfully initialize.
@@ -45,7 +45,7 @@ If the number of DPDK huge page is changed, you should change this value accordi
 **You can leave the following options unchanged**
 **They are only for your reference**
 
-- `use_rdma`: whether the palladium-gateway should use RDMA or TCP socket. If it is set to 0, use TCP socket. If it is set to 1, use RDMA. The setting `use_one_side`, `mr_per_qp`, `init_cqe_num`, `max_send_wr` is only meaningful when `use_rdma` is set to 1 (RDMA is used).
+- `use_rdma`: whether the nadino-network-engine should use RDMA or TCP socket. If it is set to 0, use TCP socket. If it is set to 1, use RDMA. The setting `use_one_side`, `mr_per_qp`, `init_cqe_num`, `max_send_wr` is only meaningful when `use_rdma` is set to 1 (RDMA is used).
 
 - `use_one_side`: whether one-side RDMA primitives or two-side RDMA primitives should be used. When this option is set to 1, one-side primitives would be used. When this option is set to 0, two-side option would be used.
 

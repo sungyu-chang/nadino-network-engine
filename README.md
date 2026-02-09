@@ -39,24 +39,24 @@ Follow steps below to set up nadino-network-engine dependencies and get ready to
 On node 1
 
 ```bash
-sudo ./run.sh shm_mgr ./cfg/my-palladium-cpu.cfg
-sudo ./run.sh gateway cfg/my-palladium-cpu.cfg
+sudo ./run.sh shm_mgr ./cfg/my-nadino-cpu.cfg
+sudo ./run.sh gateway cfg/my-nadino-cpu.cfg
 sudo ./run.sh nf 1
 ```
 
 On node 2
 
 ```bash
-sudo ./run.sh shm_mgr ./cfg/my-palladium-cpu.cfg
-sudo ./run.sh gateway cfg/my-palladium-cpu.cfg
+sudo ./run.sh shm_mgr ./cfg/my-nadino-cpu.cfg
+sudo ./run.sh gateway cfg/my-nadino-cpu.cfg
 sudo ./run.sh nf 2
 ```
 
 If dpdk eal init have the access error, try allocate huge page.
 
 ```bash
-sudo ./run.sh shm_mgr cfg/online-boutique-palladium-host.cfg
-sudo ./run.sh gateway cfg/online-boutique-palladium-host.cfg
+sudo ./run.sh shm_mgr cfg/online-boutique-nadino-host.cfg
+sudo ./run.sh gateway cfg/online-boutique-nadino-host.cfg
 sudo ./run.sh frontendservice 1
 sudo ./run.sh recommendationservice 5
 sudo ./run.sh checkoutservice 7
@@ -65,8 +65,8 @@ sudo ./run.sh checkoutservice 7
 ```
 
 ```bash
-sudo ./run.sh shm_mgr cfg/online-boutique-palladium-host.cfg
-sudo ./run.sh gateway cfg/online-boutique-palladium-host.cfg
+sudo ./run.sh shm_mgr cfg/online-boutique-nadino-host.cfg
+sudo ./run.sh gateway cfg/online-boutique-nadino-host.cfg
 sudo ./run.sh currencyservice 2
 sudo ./run.sh productcatalogservice 3
 sudo ./run.sh cartservice 4
@@ -129,7 +129,7 @@ follow the order
 worker1 host
 
 ```bash
-sudo ./run.sh shm_mgr ./cfg/online-boutique-palladium-dpu.cfg
+sudo ./run.sh shm_mgr ./cfg/online-boutique-nadino-dpu.cfg
 sudo ./run.sh sockmap_manager
 sudo ./run.sh frontendservice 1
 sudo ./run.sh recommendationservice 5
@@ -139,13 +139,13 @@ sudo ./run.sh checkoutservice 7
 dpu1
 
 ```bash
-sudo ./run.sh gateway ./cfg/online-boutique-palladium-dpu.cfg
+sudo ./run.sh gateway ./cfg/online-boutique-nadino-dpu.cfg
 ```
 
 worker2 host
 
 ```bash
-sudo ./run.sh shm_mgr ./cfg/online-boutique-palladium-dpu.cfg
+sudo ./run.sh shm_mgr ./cfg/online-boutique-nadino-dpu.cfg
 sudo ./run.sh sockmap_manager
 sudo ./run.sh currencyservice 2
 sudo ./run.sh productcatalogservice 3
@@ -159,7 +159,7 @@ sudo ./run.sh adservice 10
 dpu2
 
 ```bash
-sudo ./run.sh gateway ./cfg/online-boutique-palladium-dpu.cfg
+sudo ./run.sh gateway ./cfg/online-boutique-nadino-dpu.cfg
 ```
 
 ## CNE with P-ING
@@ -181,7 +181,7 @@ follow the order
 worker1 host
 
 ```bash
-sudo ./run.sh shm_mgr ./cfg/online-boutique-palladium-dpu.cfg
+sudo ./run.sh shm_mgr ./cfg/online-boutique-nadino-dpu.cfg
 sudo ./run.sh frontendservice 1
 sudo ./run.sh recommendationservice 5
 sudo ./run.sh checkoutservice 7
@@ -191,7 +191,7 @@ sudo ./run.sh checkoutservice 7
 worker2 host
 
 ```bash
-sudo ./run.sh shm_mgr ./cfg/online-boutique-palladium-dpu.cfg
+sudo ./run.sh shm_mgr ./cfg/online-boutique-nadino-dpu.cfg
 sudo ./run.sh currencyservice 2
 sudo ./run.sh productcatalogservice 3
 sudo ./run.sh cartservice 4
@@ -218,7 +218,7 @@ follow the order
 worker1 host
 
 ```bash
-sudo ./run.sh shm_mgr ./cfg/my-palladium-cpu.cfg
+sudo ./run.sh shm_mgr ./cfg/my-nadino-cpu.cfg
 sudo ./run.sh frontendservice 1
 sudo ./run.sh recommendationservice 5
 sudo ./run.sh checkoutservice 7
@@ -228,7 +228,7 @@ sudo ./run.sh checkoutservice 7
 worker2 host
 
 ```bash
-sudo ./run.sh shm_mgr ./cfg/my-palladium-cpu.cfg
+sudo ./run.sh shm_mgr ./cfg/my-nadino-cpu.cfg
 sudo ./run.sh currencyservice 2
 sudo ./run.sh productcatalogservice 3
 sudo ./run.sh cartservice 4
