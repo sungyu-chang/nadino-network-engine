@@ -148,6 +148,46 @@ sudo ./run.sh gateway ./cfg/simple_multi_tenant_dpu_two_node.cfg
 Setup on the ES1 (DPU1) and FS9(DPU3)
 
 If the EAL initialization is wrong, try allocate hugepage with `sudo sysctl -w vm.nr_hugepages=32768`
-On the DPU allocate huge page with `sudo sysctl -w vm.nr_hugepages=32768`
+On the DPU allocate huge page with `sudo sysctl -w vm.nr_hugepages=400`
+
+### artifact evaluation (three tenant)
+
+On DPUs, change the host name using `sudo hostname dpu1`
+
+Then change the configure file
+
+worker1 host
+
+```bash
+sudo ./run.sh shm_mgr ./cfg/ae_multi_tenant_dpu_two_node.cfg
+sudo ./run.sh sockmap_manager
+sudo ./run.sh nf 1
+sudo ./run.sh nf 2
+sudo ./run.sh nf 3
+```
+
+dpu1
+
+```bash
+sudo ./run.sh gateway ./cfg/ae_multi_tenant_dpu_two_node.cfg | tee result.txt
 
 
+```
+
+worker2 host
+
+```bash
+sudo ./run.sh shm_mgr ./cfg/ae_multi_tenant_dpu_two_node.cfg
+
+sudo ./run.sh sockmap_manager
+sudo ./run.sh nf 4
+sudo ./run.sh nf 5
+sudo ./run.sh nf 6
+```
+
+dpu2
+
+```bash
+sudo ./run.sh gateway ./cfg/ae_multi_tenant_dpu_two_node.cfg
+
+```
